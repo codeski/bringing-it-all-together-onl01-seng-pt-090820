@@ -57,7 +57,7 @@ class Dog
     if !results.empty?
       dog_array = results[0]
       dog = Dog.new_from_db(dog_array) 
-      binding.pry
+      # binding.pry
     else
       dog = self.create(hash)
     end
