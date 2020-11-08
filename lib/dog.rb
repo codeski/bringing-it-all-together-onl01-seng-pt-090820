@@ -56,6 +56,8 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
     results = DB[:conn].execute(sql, hash[:name], hash[:breed])
     if !results.empty?
+      pokemon_array = results[0]
+    else
       
     
   end
