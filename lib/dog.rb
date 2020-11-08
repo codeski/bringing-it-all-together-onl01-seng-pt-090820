@@ -57,6 +57,7 @@ class Dog
     results = DB[:conn].execute(sql, hash[:name], hash[:breed])
     if !results.empty?
       pokemon_array = results[0]
+      Dog.new_from_db(pokemon_array) 
       binding.pry
     else
       
