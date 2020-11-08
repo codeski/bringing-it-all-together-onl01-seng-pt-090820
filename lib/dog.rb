@@ -52,6 +52,7 @@ class Dog
   
   def self.find_by_id(id)
     arrays = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", @id)
+  end
     
   
   def update
