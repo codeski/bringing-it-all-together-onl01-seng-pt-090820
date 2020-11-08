@@ -56,7 +56,11 @@ class Dog
     Dog.new_from_db(pokemon_array)
   end
   
-  def self.find_or_create_by(hmm)
+  def self.find_or_create_by(hash)
+    if DB[:conn].execute("SELECT * FROM dogs WHERE name = ?, breed = breed", hash[:name], hash[:breed])
+      
+      
+    
     binding.pry
   end
     
