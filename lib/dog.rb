@@ -26,15 +26,8 @@ class Dog
       DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       arrays = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", @id)
-      # binding.pry
       pokemon_data = arrays[0]
       Dog.new_from_db(pokemon_data)
-      # hash = {} 
-      # hash[:id] = pokemon_data[0]
-      # hash[:name] = pokemon_data[1]
-      # hash[:breed] = pokemon_data[2]
-      # Dog.new(hash)
-      
     end
   end
   
@@ -59,10 +52,10 @@ class Dog
   end
   
   def self.find_or_create_by(hash)
-    # binding.pry
+    
     sql = "SELECT * FROM dogs WHERE name = ?, breed = ?"
     results = DB[:conn].execute(sql, hash[:name], hash[:breed])
-    
+    binding.pry
   end
     
   
