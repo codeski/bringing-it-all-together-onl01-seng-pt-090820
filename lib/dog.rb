@@ -55,6 +55,10 @@ class Dog
     pokemon_array = arrays[0]
     Dog.new_from_db(pokemon_array)
   end
+  
+  def self.find_or_create_by(hmm)
+    binding.pry
+  end
     
   
   def update
