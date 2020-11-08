@@ -37,18 +37,18 @@ class Dog
     dog
   end 
   
-  def self.new_from_db(pokemon_array)
+  def self.new_from_db(dog_array)
     hash = {} 
-    hash[:id] = pokemon_array[0]
-    hash[:name] = pokemon_array[1]
-    hash[:breed] = pokemon_array[2]
+    hash[:id] = dog_array[0]
+    hash[:name] = dog_array[1]
+    hash[:breed] = dog_array[2]
     Dog.create(hash)
   end
   
   def self.find_by_id(id)
     arrays = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id)
-    pokemon_array = arrays[0]
-    Dog.new_from_db(pokemon_array)
+    dog_array = arrays[0]
+    Dog.new_from_db(dog_array)
   end
   
   def self.find_or_create_by(hash)
@@ -56,13 +56,13 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
     results = DB[:conn].execute(sql, hash[:name], hash[:breed])
     if !results.empty?
-      pokemon_array = results[0]
-      Dog.new_from_db(pokemon_array) 
+      dog_array = results[0]
+      dog = Dog.new_from_db(dog_array) 
       binding.pry
     else
-      
+      dog = self.create(hash)
     end
-    
+    dog
   end
     
   
