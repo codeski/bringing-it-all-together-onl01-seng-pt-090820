@@ -57,12 +57,13 @@ class Dog
     if !results.empty?
       dog_array = results[0]
       dog = Dog.new_from_db(dog_array) 
-      # binding.pry
     else
       dog = self.create(hash)
     end
     dog
   end
+  
+  def self.find_by_name(name)
     
   
   def update
