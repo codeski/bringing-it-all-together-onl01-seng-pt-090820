@@ -42,11 +42,11 @@ class Dog
     dog
   end 
   
-  def self.new_from_db(data_base_array)
+  def self.new_from_db(pokemon_array)
     hash = {} 
-    hash[:id] = pokemon_data[0]
-    hash[:name] = pokemon_data[1]
-    hash[:breed] = pokemon_data[2]
+    hash[:id] = pokemon_array[0]
+    hash[:name] = pokemon_array[1]
+    hash[:breed] = pokemon_array[2]
     Dog.new(hash)
   end
   
