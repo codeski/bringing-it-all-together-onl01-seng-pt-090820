@@ -21,12 +21,13 @@ class Dog
     if self.id
       self.update
     else
+      binding.pry
       sql = "INSERT INTO dogs (name, breed) VALUES (?, ?)"
       DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       sql = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?")
       DB[:conn].execute(sql, self.id)
-      binding.pry
+      
     end
   end
   
