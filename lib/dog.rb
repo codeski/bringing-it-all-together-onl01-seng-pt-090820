@@ -52,7 +52,8 @@ class Dog
   
   def self.find_by_id(id)
     arrays = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", id)
-    binding.pry
+    pokemon_array = arrays[0]
+    Dog.new_from_db(pokemon_array)
   end
     
   
