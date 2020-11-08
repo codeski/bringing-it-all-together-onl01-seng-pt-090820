@@ -27,6 +27,7 @@ class Dog
       DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       arrays = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", @id)
+      binding.pry
       # pokemon_data = arrays[0]
       # binding.pry
       # hash = {} 
