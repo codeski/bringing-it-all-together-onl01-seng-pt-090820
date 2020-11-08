@@ -57,8 +57,10 @@ class Dog
     results = DB[:conn].execute(sql, hash[:name], hash[:breed])
     if !results.empty?
       pokemon_array = results[0]
+      binding.pry
     else
       
+    end
     
   end
     
