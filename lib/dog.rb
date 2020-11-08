@@ -25,10 +25,8 @@ class Dog
       DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       sql = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?")
-      DB[:conn].execute(sql, self.id).map do |row|
-        binding.pry
-        self.new(row)
-      end
+      DB[:conn].execute(sql, self.id)
+      binding.pry
     end
   end
   
