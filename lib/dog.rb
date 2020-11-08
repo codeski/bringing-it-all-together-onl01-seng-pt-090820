@@ -31,7 +31,7 @@ class Dog
       hash = {} 
       hash[:name] = pokemon_data[1]
       hash[:breed] = pokemon_data[2]
-      Dogs.new(hash)
+      Dog.new(hash)
     end
   end
   
