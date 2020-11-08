@@ -67,7 +67,7 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ?"
     DB[:conn].execute(sql, name).map do |dog_row|
       binding.pry
-    end
+    end.first
   end
     
   
