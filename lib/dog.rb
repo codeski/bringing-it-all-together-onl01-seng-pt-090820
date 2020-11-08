@@ -47,7 +47,7 @@ class Dog
     hash[:id] = pokemon_array[0]
     hash[:name] = pokemon_array[1]
     hash[:breed] = pokemon_array[2]
-    Dog.new(hash)
+    Dog.create(hash)
   end
   
   def update
