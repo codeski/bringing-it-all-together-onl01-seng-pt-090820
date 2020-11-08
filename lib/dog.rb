@@ -55,6 +55,8 @@ class Dog
     binding.pry
     sql = "SELECT * FROM dogs WHERE name = ? AND breed = ?"
     results = DB[:conn].execute(sql, hash[:name], hash[:breed])
+    if !results.empty?
+      
     
   end
     
