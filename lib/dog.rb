@@ -36,6 +36,12 @@ class Dog
     end
   end
   
+  def self.create(hash)
+    dog = Dog.new(hash)
+    dog.save
+    dog
+  end 
+  
   def self.new_from_db
   end
   
