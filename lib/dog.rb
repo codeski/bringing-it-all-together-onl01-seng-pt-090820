@@ -66,7 +66,7 @@ class Dog
   def self.find_by_name(name)
     sql = "SELECT * FROM dogs WHERE name = ?"
     DB[:conn].execute(sql, name).map do |dog_row|
-      binding.pry
+      self.new_from_db(dog_row)
     end.first
   end
     
