@@ -42,8 +42,12 @@ class Dog
     dog
   end 
   
-  def self.new_from_db(data)
-    
+  def self.new_from_db(data_base_array)
+    hash = {} 
+    hash[:id] = pokemon_data[0]
+    hash[:name] = pokemon_data[1]
+    hash[:breed] = pokemon_data[2]
+    Dog.new(hash)
   end
   
   def update
