@@ -3,7 +3,7 @@ class Dog
   attr_accessor :id, :name, :breed
   
   def initialize(hash)
-    # binding.pry
+    @id = hash[:id]
     @name = hash[:name]
     @breed = hash[:breed]
   end
@@ -29,6 +29,7 @@ class Dog
       # binding.pry
       pokemon_data = arrays[0]
       hash = {} 
+      hash[:id] = pokemon_data[0]
       hash[:name] = pokemon_data[1]
       hash[:breed] = pokemon_data[2]
       Dog.new(hash)
