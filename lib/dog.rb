@@ -26,7 +26,7 @@ class Dog
       DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
       sql = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", @id)
-      sql
+      sql = sql_data[0]
       
     end
   end
