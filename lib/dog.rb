@@ -42,7 +42,8 @@ class Dog
     dog
   end 
   
-  def self.new_from_db
+  def self.new_from_db(data)
+    binding.pry
   end
   
   def update
