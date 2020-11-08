@@ -28,11 +28,13 @@ class Dog
       arrays = DB[:conn].execute("SELECT * FROM dogs WHERE id = ?", @id)
       # binding.pry
       pokemon_data = arrays[0]
-      hash = {} 
-      hash[:id] = pokemon_data[0]
-      hash[:name] = pokemon_data[1]
-      hash[:breed] = pokemon_data[2]
-      Dog.new(hash)
+      Dog.new_from_db(pokemon_data)
+      # hash = {} 
+      # hash[:id] = pokemon_data[0]
+      # hash[:name] = pokemon_data[1]
+      # hash[:breed] = pokemon_data[2]
+      # Dog.new(hash)
+      
     end
   end
   
